@@ -1,0 +1,22 @@
+public class LogLevels {
+    
+    public static String message(String logLine) {
+        String array [] = logLine.split("]:", 2);
+        String container = null;
+        int a;
+        for(a = 0; a<= array.length -1 ; a++){
+            container = array[a];
+        }
+      return container.trim();       
+    }
+    public static String logLevel(String logLine) {
+        String array [] = logLine.split("]", 2);
+        String cont = array[0];
+        cont = cont.substring(1).toLowerCase().trim();
+        
+        return cont;
+    }
+    public static String reformat(String logLine) {
+        return message(logLine) + " " + "("+ logLevel(logLine) +")";
+    }
+}
